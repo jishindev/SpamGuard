@@ -1,0 +1,26 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- Base application theme. -->
+    <style name="Theme.SpamGuard" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/dk_red</item>
+        <item name="colorPrimaryDark">?colorSurface</item>
+        <item name="colorAccent">@color/md_red</item>
+        <item name="colorError">@color/md_red</item>
+
+        <!-- Status bar color. -->
+        <item name="android:windowLightStatusBar" tools:targetApi="m">?attr/isLightTheme</item>
+
+        <item name="bottomSheetDialogTheme">@style/Theme.SpamGuard.BSDialog</item>
+        <item name="fontFamily">@font/muli</item>
+    </style>
+
+    <style name="Theme.SpamGuard.BSDialog" parent="Theme.MaterialComponents.DayNight.BottomSheetDialog">
+        <item name="bottomSheetStyle">@style/BSDialogStyle</item>
+        <item name="colorPrimary">@color/md_grey</item>
+        <item name="android:windowIsFloating">false</item>
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:windowSoftInputMode">adjustResize</item>
+    </style>
+</resources>

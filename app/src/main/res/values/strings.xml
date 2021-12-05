@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">SpamGuard</string>
+    <string name="blocked_numbers">blocked numbers</string>
+    <string name="unblock">unblock</string>
+    <string name="info_no_results">you don\'t seem have added any numbers to the blocked list. use the + button below to add a new one.</string>
+    <string name="add_new">add new</string>
+    <string name="info_add_new_number">enter the number to be blocked</string>
+    <string name="contacts">pick from contacts</string>
+    <string name="confirm">Confirm</string>
+    <string name="or">or</string>
+    <string name="block">block number</string>
+    <string name="not_valid_number">invalid number</string>
+<!--    <string name="template_blocked_on">on %1$s</string>-->
+</resources>

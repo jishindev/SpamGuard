@@ -1,0 +1,6 @@
+<resources>
+
+    <style name="BSDialogStyle" parent="Widget.MaterialComponents.BottomSheet.Modal">
+        <item name="android:background">@drawable/bg_rec_rounded</item>
+    </style>
+</resources>
