@@ -2,6 +2,7 @@ plugins {
     id("com.android.application")
     kotlin("android")
     kotlin("kapt")
+    //id("com.google.devtools.ksp") version "1.6.0-1.0.1"
     id("dagger.hilt.android.plugin")
 }
 
@@ -42,12 +43,17 @@ android {
     }
     kotlinOptions.jvmTarget = JavaVersion.VERSION_1_8.toString()
 
-    buildFeatures {
-        viewBinding = true
-    }
+    buildFeatures.viewBinding = true
+}
+kapt {
+    correctErrorTypes = true
+}
+hilt {
+    enableAggregatingTask = true
 }
 
 dependencies {
+    implementation("com.google.devtools.ksp:symbol-processing-api:1.6.0-1.0.1")
     implementation("androidx.core:core-ktx:1.7.0")
     implementation("androidx.appcompat:appcompat:1.4.0")
 
@@ -63,15 +69,13 @@ dependencies {
     implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.4.0")
 
     // Hilt DI
-    implementation("com.google.dagger:hilt-android:2.39")
-    kapt("com.google.dagger:hilt-android-compiler:2.39")
-    /*implementation("androidx.hilt:hilt-lifecycle-viewmodel:1.0.0-alpha03")
-    kapt("androidx.hilt:hilt-compiler:1.0.0")*/
+    implementation("com.google.dagger:hilt-android:2.40.5")
+    kapt("com.google.dagger:hilt-android-compiler:2.40.5")
 
     // Room
-    implementation("androidx.room:room-runtime:2.4.0-rc01")
-    implementation("androidx.room:room-ktx:2.4.0-rc01")
-    kapt("androidx.room:room-compiler:2.4.0-rc01")
+    implementation("androidx.room:room-runtime:2.4.0")
+    implementation("androidx.room:room-ktx:2.4.0")
+    kapt("androidx.room:room-compiler:2.4.0")
 
 
     // Logging
@@ -79,6 +83,7 @@ dependencies {
 
 }
 
+/*
 kapt {
     correctErrorTypes = true
-}
+}*/

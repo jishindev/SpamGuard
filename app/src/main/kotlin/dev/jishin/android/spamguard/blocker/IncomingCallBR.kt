@@ -12,11 +12,14 @@ import android.os.IBinder
 import android.telecom.TelecomManager
 import android.telephony.TelephonyManager
 import androidx.core.app.NotificationManagerCompat
+import dagger.hilt.EntryPoint
+import dagger.hilt.InstallIn
 import dev.jishin.android.spamguard.core.db.dao.ContactsDao
 import dev.jishin.android.spamguard.core.db.entities.Contact
 import dev.jishin.android.spamguard.sendGrantPermsNotification
 import dev.jishin.android.spamguard.sendRejectedNotification
 import dagger.hilt.android.AndroidEntryPoint
+import dagger.hilt.components.SingletonComponent
 import dev.jishin.android.spamguard.getMatchingContact
 import kotlinx.coroutines.CoroutineExceptionHandler
 import kotlinx.coroutines.CoroutineScope
@@ -29,7 +32,7 @@ import kotlin.coroutines.CoroutineContext
 
 
 @AndroidEntryPoint
-class IncomingCallBR : HiltBroadcastReceiver(), CoroutineScope {
+class IncomingCallBR : /*Hilt*/BroadcastReceiver(), CoroutineScope {
 
     override val coroutineContext: CoroutineContext
         get() = Dispatchers.IO + CoroutineExceptionHandler { coroutineContext, throwable ->
@@ -43,7 +46,7 @@ class IncomingCallBR : HiltBroadcastReceiver(), CoroutineScope {
     lateinit var notificationManagerCompat: NotificationManagerCompat
 
     override fun onReceive(context: Context, intent: Intent) {
-        super.onReceive(context, intent)
+        //super.onReceive(context, intent)
         Timber.i("onReceive() called with: context = [$context], intent = [$intent]")
 
         // Abort and send out notification if permissions are not granted
@@ -127,7 +130,8 @@ class IncomingCallBR : HiltBroadcastReceiver(), CoroutineScope {
         }
     }
 }
+/*
 
 abstract class HiltBroadcastReceiver : BroadcastReceiver() {
     override fun onReceive(context: Context, intent: Intent) {}
-}
+}*/
