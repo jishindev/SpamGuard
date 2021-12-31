@@ -6,6 +6,7 @@
 
 ## Tech/UI Features:
 - The app has a minimal UI.
+- The app support Dark mode.
 - The app follows MVVM design pattern.
 - The app uses Room database to store the blocked contacts.
 - The app handles grant requests for required permissions.
