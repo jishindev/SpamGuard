@@ -22,7 +22,6 @@ import dev.jishin.android.spamguard.core.db.entities.Contact
 import dev.jishin.android.spamguard.custom.ui.adapters.SimpleRvAdapter
 import dev.jishin.android.spamguard.databinding.ActivityMainBinding
 import dev.jishin.android.spamguard.databinding.RvBlockedNumberBinding
-import java.util.*
 
 @AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
@@ -87,7 +86,7 @@ class MainActivity : AppCompatActivity() {
                     areContentsSame = { old, new -> old.number == new.number }
                 )
                 layoutManager = LinearLayoutManager(this@MainActivity)
-                addDivider()
+                //addDivider()
                 adapter = rvAdapter
             }
 
